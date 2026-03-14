@@ -1,0 +1,31 @@
+# 🎛️ MODALITÀ OPERATIVA
+execution_mode: "hybrid" # Opzioni: "online" (API), "offline" (Solo file locali), "hybrid" (Cerca prima locale, poi online)
+
+# 📂 INGESTION SETTINGS
+data_sources:
+  local_files: ["/data/ingestion/scout_report_marzo.xlsx", "/data/ingestion/wyscout_export.csv"]
+  api_providers: ["understat", "fotmob"]
+  auto_update_ttl: 7 # Aggiorna da online solo se i dati locali hanno più di 7 giorni
+
+# 🛡️ VALIDATION AGENT SETTINGS (Il Controllore)
+validation_rules:
+  strict_mode: true
+  sanity_checks:
+    - "min_minutes > 0"
+    - "goals_per_90 <= 3" # Blocca errori macroscopici
+    - "age between 15 and 45"
+  on_error: "flag_and_continue" # Opzioni: "block", "flag_and_continue", "auto_correct"
+
+# 🧠 AGENT ACTIVATION
+active_agents:
+  - "harvester"
+  - "validation_agent"
+  - "quant_analyst"
+  - "devils_advocate"
+  - "scout_reporter"
+
+# 📊 KPI & WEIGHTS (Custom per questa ricerca)
+analysis_profile: "Goal-Scorer Search"
+kpi_priority:
+  xG90: 0.8
+  ShotsOnTarget: 0.2

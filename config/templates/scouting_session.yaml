@@ -1,0 +1,43 @@
+# 📂 CONFIGURAZIONE SESSIONE DI SCOUTING
+session_info:
+  target_player: "Teun Koopmeiners" # Nome del giocatore benchmark
+  target_team: "Juventus"
+  analysis_id: "SR_2024_001"
+
+# 🛠️ FILTRI DI MERCATO (Data Source: Transfermarkt/Custom)
+market_filters:
+  max_age: 25
+  min_minutes_played: 900
+  max_market_value_mln: 30
+  contract_expiry_max_years: 2
+  excluded_leagues: ["Russian Premier League", "Saudi Pro League"]
+  target_leagues: ["Serie A", "Bundesliga", "Ligue 1", "Eredivisie"]
+
+# 📊 CONFIGURAZIONE KPI (Dinamici per Ruolo)
+# Pesi totali devono sommare a 1.0 per ogni area o essere normalizzati internamente
+kpi_weights:
+  offensive:
+    weight: 0.3
+    metrics: { "Goals90": 0.5, "ShotsOnTarget90": 0.5 }
+  creative:
+    weight: 0.4
+    metrics: { "xA90": 0.6, "KeyPasses90": 0.4 }
+  construction:
+    weight: 0.2
+    metrics: { "xGBuildup90": 1.0 }
+  defensive:
+    weight: 0.1
+    metrics: { "Interceptions90": 0.5, "TacklesWon90": 0.5 }
+
+# 🛡️ PROTOCOLLO DATA GAP & RESILIENZA
+data_management:
+  use_proxy_metrics: true      # Attiva fallback se KPI principale manca
+  imputation_strategy: "role_median" # "zero", "mean", "role_median"
+  confidence_threshold: 0.6    # Scarta giocatori con meno del 60% dei dati certi
+
+# 📈 OUTPUT & PERSISTENZA
+output_options:
+  visualization: ["heatmap", "radar_1vs1"]
+  palette: "mako"              # Viridis palette
+  history_ttl_days: 7          # Aggiorna dati se più vecchi di 7 giorni
+  storage_format: "sqlite"     # "sqlite" o "parquet"
