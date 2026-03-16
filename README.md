@@ -17,12 +17,26 @@ Il sistema permette di caricare file CSV/Excel contenenti statistiche dei giocat
 - Dipendenze: `pandas`, `numpy`, `scikit-learn`, `matplotlib`, `openpyxl`
 
 ## 🚀 Utilizzo
-1. Installa le dipendenze: `pip install -r requirements.txt` (Assicurati che pandas e sklearn siano installati)
-2. Inizializza il database: `python3 execution/setup_db.py`
-3. Avvia lo scouting: `python3 execution/main_orchestrator.py`
+
+1. **Attiva l'ambiente virtuale**:
+   ```bash
+   source .venv/bin/activate
+   ```
+2. **Installa le dipendenze**:
+   ```bash
+   pip install -r requirements.txt
+   ```
+3. **Inizializza il database**:
+   ```bash
+   python3 -m execution.setup_db
+   ```
+4. **Avvia lo scouting**:
+   ```bash
+   python3 -m execution.main_orchestrator
+   ```
 
 ## 📁 Struttura Progetto
-- `execution/`: Core logic (Harvester, Analysis, Reporting).
+- `execution/`: Core logic (Harvester, Analysis, Reporting). Contiene `__init__.py` per permettere l'importazione come pacchetto.
 - `history/`: Database SQLite dello storico scouting.
 - `data/reports/`: Risultati generati (JSON e Grafici).
 - `directives/`: Standard Operating Procedures (SOP).

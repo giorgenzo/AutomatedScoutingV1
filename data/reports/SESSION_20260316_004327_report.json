@@ -1,0 +1,67 @@
+{
+    "session_id": "SESSION_20260316_004327",
+    "status": "APPROVED",
+    "candidates_evaluated": 6,
+    "top_candidates": [
+        {
+            "player_name": "Adrien Rabiot",
+            "age": 29,
+            "xG90": 0.15,
+            "ShotsOnTarget": 0.8,
+            "goals_per_90": 0.2,
+            "KeyPasses": 1.0,
+            "source_file": "sample_players.csv",
+            "similarity_score": 0.0
+        },
+        {
+            "player_name": "Nicolo Barella",
+            "age": 27,
+            "xG90": 0.1,
+            "ShotsOnTarget": 1.0,
+            "goals_per_90": 0.1,
+            "KeyPasses": 2.5,
+            "source_file": "sample_players.csv",
+            "similarity_score": 0.2656475070420295
+        },
+        {
+            "player_name": "Lazar Samardzic",
+            "age": 22,
+            "xG90": 0.25,
+            "ShotsOnTarget": 1.4,
+            "goals_per_90": 0.2,
+            "KeyPasses": 2.2,
+            "source_file": "sample_players.csv",
+            "similarity_score": 0.3119828432540988
+        },
+        {
+            "player_name": "Marten de Roon",
+            "age": 32,
+            "xG90": 0.04,
+            "ShotsOnTarget": 0.3,
+            "goals_per_90": 0.05,
+            "KeyPasses": 0.5,
+            "source_file": "sample_players.csv",
+            "similarity_score": 0.3701966208896648
+        },
+        {
+            "player_name": "Hakan Calhanoglu",
+            "age": 30,
+            "xG90": 0.3,
+            "ShotsOnTarget": 1.2,
+            "goals_per_90": 0.35,
+            "KeyPasses": 3.0,
+            "source_file": "sample_players.csv",
+            "similarity_score": 0.5077467128228742
+        },
+        {
+            "player_name": "Teun Koopmeiners",
+            "age": 25,
+            "xG90": 0.35,
+            "ShotsOnTarget": 1.5,
+            "goals_per_90": 0.4,
+            "KeyPasses": 2.0,
+            "source_file": "sample_players.csv",
+            "similarity_score": 0.613215249412457
+        }
+    ]
+}
